@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.Design;
+using System.ComponentModel.Design;
 using System.Net;
 
 internal class Program
@@ -26,6 +26,7 @@ internal class Program
                 Console.WriteLine("Введите второе число");
                 string secondNumberstr = Console.ReadLine();
                 double secondNumber = Convert.ToDouble(secondNumberstr);
+
                 switch (operationstr)
                 {
 
@@ -42,11 +43,11 @@ internal class Program
                         Console.WriteLine(resultMul);
                         break;
                     case "4":
-                    double resultDel = 0;
-                    if (secondNumber == 0) 
-                        Console.WriteLine("На ноль делить нельзя");
-                    else 
-                        resultDel = firstNumber / secondNumber;
+                        double resultDel = 0;
+                        if (secondNumber == 0)
+                            Console.WriteLine("На ноль делить нельзя");
+                        else
+                            resultDel = firstNumber / secondNumber;
                         Console.WriteLine(resultDel);
                         break;
                     case "5":
@@ -62,18 +63,28 @@ internal class Program
                         Console.WriteLine(resultProcent);
                         break;
                     case "8":
-                        double Factorial(double n)
+                    double factorial = 1;
+                    for (double i = 1; i <= firstNumber; i++)
+                    {
+                        factorial *= i;
+                        if (i == firstNumber)
                         {
-                            if (n == 1) return 1;
-
-                            return n * Factorial(n - 1);
+                            Console.Write("");
                         }
-                        double resultFactorial = Factorial(firstNumber) ;
-                        Console.WriteLine(resultFactorial);
-                        break;
+                        else
+                        {
+                            Console.Write("");
+                        }
+                    }
+                    Console.Write("{0}",factorial);
+                    Console.ReadKey();
+                    break;
                     case "9":
-                       return;
+                        return;
+
                 }
-            } while (true);
+            
+            
+        } while (true);
     }
 }
